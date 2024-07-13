@@ -1,0 +1,17 @@
+{
+  "name": "api-blog-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "implicitDependencies": ["api-blog"],
+  "targets": {
+    "e2e": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
+      "options": {
+        "jestConfig": "app/api-blog-e2e/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "dependsOn": ["api-blog:build"]
+    }
+  }
+}
